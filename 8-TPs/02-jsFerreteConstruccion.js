@@ -79,6 +79,7 @@ function Materiales ()
 	metrosCuadradosDelTerreno = largoDelTerreno * anchoDelTerreno;
 	cantidadDeCementoParaTerrenoRectangular = metrosCuadradosDelTerreno * 2;
 	cantidadDeCalParaTerrenoRectangular = metrosCuadradosDelTerreno * 3;
+	
 	//Realizacion de calculos para el terreno circular
 	areaDelCirculo = 3.14 * radioDelTerreno**2;
 	cantidadDeCementoParaCirculo = areaDelCirculo * 2;
