@@ -41,6 +41,9 @@ function Circulo ()
 	//Toma de datos
 	radioDelTerreno = document.getElementById('txtIdRadio').value;
 
+	//Pasaje a caracteres a numeros
+	radioDelTerreno = parseFloat(radioDelTerreno);
+
 	//Realizacion de calculos
 	diametroDelTerreno = radioDelTerreno * 2;
 	cantidadDeAlambre = diametroDelTerreno * 3;
@@ -55,15 +58,34 @@ function Materiales ()
 	var largoDelTerreno;
 	var anchoDelTerreno;
 	var metrosCuadradosDelTerreno;
-	var cantidadDeCal;
-	var cantidadDeCemento;
+	var cantidadDeCalParaTerrenoRectangular;
+	var cantidadDeCementoParaTerrenoRectangular;
+	var areaDelCirculo;
+	var radioDelTerreno;
+	var cantidadDeCalParaCirculo;
+	var cantidadDeCementoParaCirculo;
 
 	//Toma de datos
 	largoDelTerreno = document.getElementById('txtIdLargo').value;
 	anchoDelTerreno = document.getElementById('txtIdAncho').value;
+	radioDelTerreno = document.getElementById('txtIdRadio').value;
 
-	//Realizacion de calculos
-	
+	//Pasaje a caracteres a numeros
+	largoDelTerreno = parseFloat(largoDelTerreno);
+	anchoDelTerreno = parseFloat(anchoDelTerreno);
+	radioDelTerreno = parseFloat(radioDelTerreno);
 
+	//Realizacion de calculos para el terreno cuadrado
+	metrosCuadradosDelTerreno = largoDelTerreno * anchoDelTerreno;
+	cantidadDeCementoParaTerrenoRectangular = metrosCuadradosDelTerreno * 2;
+	cantidadDeCalParaTerrenoRectangular = metrosCuadradosDelTerreno * 3;
+	//Realizacion de calculos para el terreno circular
+	areaDelCirculo = 3.14 * radioDelTerreno**2;
+	cantidadDeCementoParaCirculo = areaDelCirculo * 2;
+	cantidadDeCalParaCirculo = areaDelCirculo * 3;
+
+	//Muestra del resultado
+	alert("Para un terreno rectangulo va a necesitar: " + cantidadDeCementoParaTerrenoRectangular + " bolsas de cemento y " + cantidadDeCalParaTerrenoRectangular + " bolsas de cal");	
+	alert("Para un terreno circular va a necesitar: " + cantidadDeCementoParaCirculo + " bolsas de cemento y " + cantidadDeCalParaCirculo + " bolsas de cal");
 
 }
