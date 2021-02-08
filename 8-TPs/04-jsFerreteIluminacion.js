@@ -13,16 +13,24 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
  //ID = txtIdCantidad, Marca, txtIdprecioDescuento 
 
+ /*
+ 	a- solo if
+ 	b- solo switch
+ 	c- if con switch adentro
+ 	d- switch con if adentro
+ */
+
 function CalcularPrecio () 
 {
  	//Declaracion de variables
  	var cantidadDeLamparas;
  	var marcaDeLamparas;
- 	var descuentoAAplicarSobreElPrecioFinal = 0;
+ 	var descuentoAAplicarSobreElPrecioFinal;
  	var precioDeLamparasIndividual;
  	var precioDeLaparasTotal;
  	var precioDeLamparasFinal;
  	var impuestoSobrePrecioFinal;
+ 	var porcentaje;
 
  	//Defino el precio de las lamparas
  	precioDeLamparasIndividual = 35;
@@ -40,8 +48,8 @@ function CalcularPrecio ()
  	//Comparo cantidad de lamparas compradas 50%off
  	if(cantidadDeLamparas > 5)
  	{
- 		//Realizacion de calculos 
- 		descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (50/100);
+ 	 
+ 		porcentaje = 50;
 
  	}//Fin if(cantidadDeLamparas > 5)
  	//5 Lamparas
@@ -53,15 +61,17 @@ function CalcularPrecio ()
  			//Argentinaluz tiene un 40% off sobre otras marcas
  			if(marcaDeLamparas == "ArgentinaLuz")
  			{
- 				//Realizacion de calculos 
- 				descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (40/100);
+ 				
+ 				porcentaje = 40;
+
 
  			}//Fin if(marcaDeLamparas == "ArgentinaLuz")
  			//else otras marcas tienen un 30% off
  			else
  			{
- 				//Realizacion de calculos 
- 				descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (30/100);
+ 				 
+ 				porcentaje = 30;
+
 
  			}//Fin else if(marcaDeLamparas == "ArgentinaLuz")
 
@@ -75,15 +85,16 @@ function CalcularPrecio ()
  				//Argentinaluz y Felipelamparas tienen un 25% off
  				if(marcaDeLamparas == "ArgentinaLuz" || marcaDeLamparas == "FelipeLamparas")
  				{
- 					//Realizacion de calculos 
- 					descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (25/100);
+ 					 
+ 					porcentaje = 25;
 
  				} //Fin if(marcaDeLamparas == "ArgentinaLuz" || marcaDeLamparas == "FelipeLamparas") 
  				//else otras marcas tienen un 20% off
  				else
  				{
- 					//Realizacion de calculos 
- 					descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (20/100);
+ 					 
+ 					porcentaje = 20;
+
 
  				}//Fin else if(marcaDeLamparas == "ArgentinaLuz" || marcaDeLamparas == "FelipeLamparas")
 
@@ -97,8 +108,9 @@ function CalcularPrecio ()
  					//ArgentinaLuz 15% off
  					if(marcaDeLamparas == "ArgentinaLuz")
  					{
- 						//Realizacion de calculos 
- 						descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (15/100);
+
+ 						porcentaje = 15;
+
 
  					}//Fin if(marcaDeLamparas == "ArgentinaLuz")
  					else
@@ -106,15 +118,15 @@ function CalcularPrecio ()
  						//FelipeLamparas 10% off
  						if(marcaDeLamparas == "FelipeLamparas")
  						{
- 							//Realizacion de calculos
- 							descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (10/100);
+ 							
+ 							porcentaje = 10;
 
  						}//Fin if(marcaDeLamparas == "FelipeLamparas")
  						//Otras marcas 5% off
  						else
  						{
- 							//Realizacion de calculos
- 							descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (5/100);
+ 						
+ 							porcentaje = 5;
 
  						}//Fin else if(marcaDeLamparas == "FelipeLamparas")
 
@@ -124,8 +136,8 @@ function CalcularPrecio ()
  				//else para 1 o 2 lamparas
  				else 
  				{	
- 					//Realizacion de calculos
- 					precioDeLamparasFinal = precioDeLaparasTotal;
+ 					
+ 					porcentaje = 0;
 
  				}//Fin else if(cantidadDeLamparas == 3)
 
@@ -135,6 +147,8 @@ function CalcularPrecio ()
 
  	}//Fin else if(cantidadDeLamparas > 5)
 
+ 	//Realizacion de calculos
+ 	descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (porcentaje/100);
  	precioDeLamparasFinal = precioDeLaparasTotal - descuentoAAplicarSobreElPrecioFinal;
 
  	//Importe mayor a $120, se le agrega un 10% por impuestos
