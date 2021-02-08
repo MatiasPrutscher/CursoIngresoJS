@@ -13,7 +13,7 @@ function mostrar()
 	edad = parseInt(edad);
 
 	//Comparo edades
-	if(edad > 18 && estadoCivil == "Soltero")
+	if(edad < 18 && estadoCivil != "Soltero")
 	{
 		alert("Es muy pequeño para NO ser soltero.");
 	}
