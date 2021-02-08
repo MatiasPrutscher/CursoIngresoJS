@@ -8,7 +8,154 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
+ //ID = txtIdCantidad, Marca, txtIdprecioDescuento 
 function CalcularPrecio () 
 {
- 	
+ 	//Declaracion de variables
+ 	var cantidadDeLamparas;
+ 	var marcaDeLamparas;
+ 	var descuentoAAplicarSobreElPrecioFinal;
+ 	var precioDeLamparasIndividual;
+ 	var precioDeLaparasTotal;
+ 	var precioDeLamparasFinal;
+ 	var impuestoSobrePrecioFinal;
+
+ 	//Defino el precio de las lamparas
+ 	precioDeLamparasIndividual = 35;
+
+ 	//Toma de datos
+ 	cantidadDeLamparas = document.getElementById('txtIdCantidad').value;
+ 	marcaDeLamparas = document.getElementById('Marca').value;
+
+ 	//Paso de caracter a numero
+ 	cantidadDeLamparas = parseInt(cantidadDeLamparas);
+
+ 	//Comparo cantidad de lamparas compradas 50%off
+ 	if(cantidadDeLamparas > 5)
+ 	{
+ 		//Realizacion de calculos 
+ 		precioDeLaparasTotal = cantidadDeLamparas * precioDeLamparasIndividual;
+ 		descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (50/100);
+ 		precioDeLamparasFinal = precioDeLaparasTotal - descuentoAAplicarSobreElPrecioFinal;
+
+ 	}//Fin if(cantidadDeLamparas > 5)
+ 	//5 Lamparas
+ 	else
+ 	{	
+ 		//Cantidad de lamparas x5
+ 		if(cantidadDeLamparas == 5)
+ 		{	
+ 			//Argentinaluz tiene un 40% off sobre otras marcas
+ 			if(marcaDeLamparas == "ArgentinaLuz")
+ 			{
+ 				//Realizacion de calculos 
+ 				precioDeLaparasTotal = cantidadDeLamparas * precioDeLamparasIndividual;
+ 				descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (40/100);
+ 				precioDeLamparasFinal = precioDeLaparasTotal - descuentoAAplicarSobreElPrecioFinal;
+ 			}//Fin if(marcaDeLamparas == "ArgentinaLuz")
+ 			//else otras marcas tienen un 30% off
+ 			else
+ 			{
+ 				//Realizacion de calculos 
+ 				precioDeLaparasTotal = cantidadDeLamparas * precioDeLamparasIndividual;
+ 				descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (30/100);
+ 				precioDeLamparasFinal = precioDeLaparasTotal - descuentoAAplicarSobreElPrecioFinal;
+ 			}//Fin else if(marcaDeLamparas == "ArgentinaLuz")
+
+ 		} //if(cantidadDeLamparas == 5)
+ 		//else 4 lamparas
+ 		else
+ 		{	
+ 			//if cantidad de lamparas *4
+ 			if(cantidadDeLamparas == 4)
+ 			{
+ 				//Argentinaluz y Felipelamparas tienen un 25% off
+ 				if(marcaDeLamparas == "ArgentinaLuz" || marcaDeLamparas == "FelipeLamparas")
+ 				{
+ 					//Realizacion de calculos 
+ 					precioDeLaparasTotal = cantidadDeLamparas * precioDeLamparasIndividual;
+ 					descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (25/100);
+ 					precioDeLamparasFinal = precioDeLaparasTotal - descuentoAAplicarSobreElPrecioFinal;
+
+ 				} //Fin if(marcaDeLamparas == "ArgentinaLuz" || marcaDeLamparas == "FelipeLamparas") 
+ 				//else otras marcas tienen un 20% off
+ 				else
+ 				{
+ 					//Realizacion de calculos 
+ 					precioDeLaparasTotal = cantidadDeLamparas * precioDeLamparasIndividual;
+ 					descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (20/100);
+ 					precioDeLamparasFinal = precioDeLaparasTotal - descuentoAAplicarSobreElPrecioFinal;
+
+ 				}//Fin else if(marcaDeLamparas == "ArgentinaLuz" || marcaDeLamparas == "FelipeLamparas")
+
+ 			}//Fin if(cantidadDeLamparas == 4)
+ 			else
+ 			{
+
+ 				//if cantidad de lamparas *3
+ 				if(cantidadDeLamparas == 3)
+ 				{	
+ 					//ArgentinaLuz 15% off
+ 					if(marcaDeLamparas == "ArgentinaLuz")
+ 					{
+ 						//Realizacion de calculos 
+ 						precioDeLaparasTotal = cantidadDeLamparas * precioDeLamparasIndividual;
+ 						descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (15/100);
+ 						precioDeLamparasFinal = precioDeLaparasTotal - descuentoAAplicarSobreElPrecioFinal;
+
+ 					}//Fin if(marcaDeLamparas == "ArgentinaLuz")
+ 					else
+ 					{	
+ 						//FelipeLamparas 10% off
+ 						if(marcaDeLamparas == "FelipeLamparas")
+ 						{
+ 							//Realizacion de calculos
+ 							precioDeLaparasTotal = cantidadDeLamparas * precioDeLamparasIndividual;
+ 							descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (10/100);
+ 							precioDeLamparasFinal = precioDeLaparasTotal - descuentoAAplicarSobreElPrecioFinal;
+
+ 						}//Fin if(marcaDeLamparas == "FelipeLamparas")
+ 						//Otras marcas 5% off
+ 						else
+ 						{
+ 							//Realizacion de calculos
+ 							precioDeLaparasTotal = cantidadDeLamparas * precioDeLamparasIndividual;
+ 							descuentoAAplicarSobreElPrecioFinal = precioDeLaparasTotal * (5/100);
+ 							precioDeLamparasFinal = precioDeLaparasTotal - descuentoAAplicarSobreElPrecioFinal;
+
+ 						}//Fin else if(marcaDeLamparas == "FelipeLamparas")
+
+ 					}//Fin else if(marcaDeLamparas == "ArgentinaLuz")
+
+ 				}//Fin if(cantidadDeLamparas == 3)
+ 				//else para 1 o 2 lamparas
+ 				else 
+ 				{	
+ 					//Realizacion de calculos
+ 					precioDeLaparasTotal = cantidadDeLamparas * precioDeLamparasIndividual;
+ 					precioDeLamparasFinal = precioDeLaparasTotal;
+ 				}//Fin else if(cantidadDeLamparas == 3)
+
+ 			}//Fin else if(cantidadDeLamparas == 4) 
+
+ 		}//Fin else if(cantidadDeLamparas == 5)
+
+ 	}//Fin else if(cantidadDeLamparas > 5)
+
+ 	//Importe mayor a $120, se le agrega un 10% por impuestos
+ 	if(precioDeLamparasFinal > 119)
+ 	{
+ 		//Realizacion de calculos
+ 		impuestoSobrePrecioFinal = precioDeLamparasFinal * (10/100);
+ 		precioDeLamparasFinal = precioDeLamparasFinal + impuestoSobrePrecioFinal;
+
+ 		//Muestro mensaje sobre la aplicacion del impuesto
+ 		alert("Usted pago " + impuestoSobrePrecioFinal + " de IIBB.");
+
+ 	}//Fin if(precioDeLamparasFinal > 119)
+
+
+ 	//Muestro precio final
+ 	document.getElementById('txtIdprecioDescuento').value = precioDeLamparasFinal; 
+
 }
