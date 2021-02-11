@@ -1,8 +1,12 @@
 /*
+Prutscher Matias
+1°C
 Al presionar el botón pedir  números  hasta que el usuario quiera,
 mostrar el número máximo y el número mínimo ingresado.*/
 function mostrar()
-{	// declarar variables
+{	
+
+	// declarar variables
 	var banderaDelPrimero;
 	var numeroIngresado;
 	var numeroMaximo;
@@ -11,11 +15,32 @@ function mostrar()
 	//iniciar variables
 	banderaDelPrimero="es el primero";
 	respuesta='si';
+	numeroMaximo = 0;
+	numeroMinimo = 0;
+
 	while(respuesta=="si")
 	{
-		
+		numeroIngresado = prompt("Ingrese un numero: ");
+
+		numeroIngresado = parseInt(numeroIngresado);
+
+		if(numeroIngresado > numeroMaximo)
+		{
+			numeroMaximo = numeroIngresado;
+		}
+		else
+		{
+			if(numeroIngresado < numeroMinimo)
+			{
+				numeroMinimo = numeroIngresado;
+			}
+		}
+
+
 		respuesta=prompt("desea continuar?");
 	}
-	txtIdMaximo.value=numeroMaximo;
-	txtIdMinimmo.value=numeroMinimo;
+
+	document.getElementById('txtIdMaximo').value=numeroMaximo;
+	document.getElementById('txtIdMinimo').value=numeroMinimo;
+
 }//FIN DE LA FUNCIÓN

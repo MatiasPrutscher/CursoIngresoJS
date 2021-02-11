@@ -1,4 +1,6 @@
 /*
+Prutscher Matias
+1°C
 Al presionar el botón pedir  números  
 hasta que el usuario quiera, mostrar:
 1-Suma de los negativos.
@@ -15,15 +17,77 @@ function mostrar()
 	//declarar contadores y variables 
 	var respuesta;
 	var numeroIngresado;
-	var sumaNegativos=0;
+	var sumaNegativos;
+	var sumaPositivos;
+	var cantidadPositivos;
+	var cantidadNegativos;
+	var cantidadCeros;
+	var cantidadPares;
+	var promedioPositivo;
+	var promedioNegativo;
+	var diferenciaEntrePositivosYNegativos;
+	var par;
+	
 
+	//Inicializacion de variables
 	respuesta="si";
+	sumaNegativos = 0;
+	sumaPositivos = 0;
+	cantidadPositivos = 0;
+	cantidadNegativos = 0;
+	cantidadCeros = 0;
+	cantidadPares = 0;
+	promedioPositivo = 0;
+	promedioNegativo = 0;
+	
+
 
 	while(respuesta=="si")
-	{
-		
+	{	
+
+		numeroIngresado = prompt("Ingrese un numero: ");
+		numeroIngresado = parseInt(numeroIngresado);
+		par = numeroIngresado % 2;
+
+		if(numeroIngresado > 0)
+		{
+			sumaPositivos = sumaPositivos + numeroIngresado;
+			cantidadPositivos++;
+		}
+		else
+		{
+			if(numeroIngresado < 0)
+			{
+				sumaNegativos = sumaNegativos + numeroIngresado;
+				cantidadNegativos++;
+			}
+			else
+			{
+				cantidadCeros++;
+			}
+
+		}
+		if(par == 0)
+		{
+			cantidadPares++;
+		}
+
+
+
+
 		respuesta=prompt("desea continuar?");
+
 	}//fin del while
 
-	document.write("la suma de negativos es :"+sumaNegativos);
+	promedioPositivo = sumaPositivos / cantidadPositivos;
+	promedioNegativo = sumaNegativos / cantidadNegativos;
+	diferenciaEntrePositivosYNegativos = sumaPositivos - sumaPositivos;
+
+
+	alert("La suma de negativos es: " + sumaNegativos + "\nLa suma de positivos es: " + sumaPositivos);
+	alert("La cantidad de positivos es: " + cantidadPositivos +"\nLa cantidad de negativos es: " + cantidadNegativos + "\nLa cantidad de ceros: " + cantidadCeros + "\nLa cantidad de pares: "+ cantidadPares);
+	alert("El promedio positivo es: " + promedioPositivo + "\nEl promedio negativo es: " + promedioNegativo);
+	alert("La diferencia entre positivos y negativos es: " + diferenciaEntrePositivosYNegativos);
+	
+	
 }//FIN DE LA FUNCIÓN
