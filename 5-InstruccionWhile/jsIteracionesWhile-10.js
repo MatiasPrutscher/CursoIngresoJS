@@ -85,6 +85,17 @@ function mostrar()
 
 
 	document.write("La suma de negativos es: " + sumaNegativos);
+	document.write("<br>La suma de positivos es: " + sumaPositivos);
+	document.write("<br>La cantidad de positivos es: " + cantidadPositivos);
+	document.write("<br>La cantidad de negativos es: " + cantidadNegativos);
+	document.write("<br>La cantidad de ceros: " + cantidadCeros);
+	document.write("<br>La cantidad de pares: "+ cantidadPares);
+	document.write("<br>El promedio positivo es: " + promedioPositivo);
+	document.write("<br>El promedio negativo es: " + promedioNegativo);
+	document.write("<br>La diferencia entre positivos y negativos es: " + diferenciaEntrePositivosYNegativos);
+
+	/*
+	document.write("La suma de negativos es: " + sumaNegativos);
 	document.write("<br>");
 	document.write("La suma de positivos es: " + sumaPositivos);
 	document.write("<br>");
@@ -100,8 +111,7 @@ function mostrar()
 	document.write("<br>");
 	document.write("El promedio negativo es: " + promedioNegativo);
 	document.write("<br>");
-	document.write("La diferencia entre positivos y negativos es: " + diferenciaEntrePositivosYNegativos);
-
+	document.write("La diferencia entre positivos y negativos es: " + diferenciaEntrePositivosYNegativos);*/
 
 	/*document.write("La suma de negativos es: " + sumaNegativos);
 	document.write("\nLa suma de positivos es: " + sumaPositivos);*/

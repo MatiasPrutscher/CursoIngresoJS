@@ -16,8 +16,7 @@ function mostrar()
 	//iniciar variables
 	banderaDelPrimero="es el primero";
 	respuesta='si';
-	numeroMaximo = 0;
-	numeroMinimo = 0;
+	
 
 	while(respuesta=="si")
 	{
@@ -25,21 +24,41 @@ function mostrar()
 
 		numeroIngresado = parseInt(numeroIngresado);
 
-		if(numeroIngresado > numeroMaximo)
+		if(banderaDelPrimero == "es el primero")
 		{
 			numeroMaximo = numeroIngresado;
-		}
+			numeroMinimo = numeroIngresado;
+			banderaDelPrimero = "No es el primero...";
+
+		}//Fin if(banderaDelPrimero == "es el primero")
 		else
 		{
-			if(numeroIngresado < numeroMinimo)
+			if(numeroIngresado > numeroMaximo)
 			{
-				numeroMinimo = numeroIngresado;
-			}
-		}
+
+				numeroMaximo = numeroIngresado;
+
+			}//Fin if(numeroIngresado > numeroMaximo)
+
+			else
+			{
+				if(numeroIngresado < numeroMinimo)
+				{
+
+					numeroMinimo = numeroIngresado;
+
+				}//Fin if(numeroIngresado < numeroMinimo)
+
+			}//Fin else if(numeroIngresado > numeroMaximo)
+
+		}//Fin else if(banderaDelPrimero == "es el primero")
+
+		
 
 
 		respuesta=prompt("desea continuar?");
-	}
+
+	}//Fin while(respuesta=="si")
 
 	document.getElementById('txtIdMaximo').value=numeroMaximo;
 	document.getElementById('txtIdMinimo').value=numeroMinimo;

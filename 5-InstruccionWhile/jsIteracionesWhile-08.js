@@ -12,7 +12,6 @@ function mostrar()
 	var numeroIngresado;
 
 	//Inicializacion de variables
-	contador=0;
 	sumaPositivos=0;
 	multiplicacionNegativos=1;
 	respuesta='si';
