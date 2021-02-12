@@ -6,7 +6,6 @@ sumar los que son positivos y multiplicar los negativos.*/
 function mostrar()
 {	
 	//Declaracion de variables
-	var contador;
 	var respuesta;
 	var sumaPositivos;
 	var multiplicacionNegativos;
@@ -20,10 +19,10 @@ function mostrar()
 
 	while(respuesta == "si")
 	{
-		contador++;
+		
 		numeroIngresado = prompt("Ingrese un numero: ");
 		numeroIngresado = parseInt(numeroIngresado);
-		if(numeroIngresado > -1)
+		if(numeroIngresado > 0)
 		{
 			sumaPositivos = sumaPositivos + numeroIngresado;
 		}

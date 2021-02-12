@@ -24,5 +24,5 @@ function mostrar()
 	
 	
 	txtIdSuma.value=acumulador;
-	txtIdPromedio.value=acumulador/5;
+	txtIdPromedio.value=acumulador/contador;
 }//FIN DE LA FUNCIÓN

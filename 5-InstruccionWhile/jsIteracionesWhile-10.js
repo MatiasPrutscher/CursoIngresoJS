@@ -84,10 +84,32 @@ function mostrar()
 	diferenciaEntrePositivosYNegativos = sumaPositivos - sumaPositivos;
 
 
-	alert("La suma de negativos es: " + sumaNegativos + "\nLa suma de positivos es: " + sumaPositivos);
+	document.write("La suma de negativos es: " + sumaNegativos);
+	document.write("<br>");
+	document.write("La suma de positivos es: " + sumaPositivos);
+	document.write("<br>");
+	document.write("La cantidad de positivos es: " + cantidadPositivos);
+	document.write("<br>");
+	document.write("La cantidad de negativos es: " + cantidadNegativos);
+	document.write("<br>");
+	document.write("La cantidad de ceros: " + cantidadCeros);
+	document.write("<br>");
+	document.write("La cantidad de pares: "+ cantidadPares);
+	document.write("<br>");
+	document.write("El promedio positivo es: " + promedioPositivo);
+	document.write("<br>");
+	document.write("El promedio negativo es: " + promedioNegativo);
+	document.write("<br>");
+	document.write("La diferencia entre positivos y negativos es: " + diferenciaEntrePositivosYNegativos);
+
+
+	/*document.write("La suma de negativos es: " + sumaNegativos);
+	document.write("\nLa suma de positivos es: " + sumaPositivos);*/
+
+	/*alert("La suma de negativos es: " + sumaNegativos + "\nLa suma de positivos es: " + sumaPositivos);
 	alert("La cantidad de positivos es: " + cantidadPositivos +"\nLa cantidad de negativos es: " + cantidadNegativos + "\nLa cantidad de ceros: " + cantidadCeros + "\nLa cantidad de pares: "+ cantidadPares);
 	alert("El promedio positivo es: " + promedioPositivo + "\nEl promedio negativo es: " + promedioNegativo);
-	alert("La diferencia entre positivos y negativos es: " + diferenciaEntrePositivosYNegativos);
+	alert("La diferencia entre positivos y negativos es: " + diferenciaEntrePositivosYNegativos);*/
 	
 	
 }//FIN DE LA FUNCIÓN
