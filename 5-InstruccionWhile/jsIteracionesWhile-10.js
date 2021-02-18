@@ -46,6 +46,12 @@ function mostrar()
 	{	
 
 		numeroIngresado = prompt("Ingrese un numero: ");
+		while(isNaN(numeroIngresado)==true)
+		{
+
+			numeroIngresado = prompt("Error, ingrese un numero: ");
+			
+		}
 		numeroIngresado = parseInt(numeroIngresado);
 		par = numeroIngresado % 2;
 

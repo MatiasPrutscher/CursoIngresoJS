@@ -17,7 +17,11 @@ function mostrar()
 	while(contador < 5)
 	{
 		contador++;
-		numeroIngresado = prompt("Ingrese un numero: ");
+		numeroIngresado = prompt("Ingrese un numero: " + contador);
+		while(isNaN(numeroIngresado) == true)
+		{
+			numeroIngresado = prompt("Error, ingrese un numero: " + contador);
+		}
 		numeroIngresado = parseInt(numeroIngresado);
 		acumulador = acumulador + numeroIngresado;
 	}
