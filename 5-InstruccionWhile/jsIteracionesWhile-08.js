@@ -10,11 +10,13 @@ function mostrar()
 	var sumaPositivos;
 	var multiplicacionNegativos;
 	var numeroIngresado;
+	var bandera;
 
 	//Inicializacion de variables
 	sumaPositivos=0;
 	multiplicacionNegativos=1;
 	respuesta='si';
+	bandera = 0;
 
 	while(respuesta == "si")
 	{
@@ -28,9 +30,14 @@ function mostrar()
 		else
 		{
 			multiplicacionNegativos = multiplicacionNegativos * numeroIngresado;
+			bandera = 1;
 		}
 
 		respuesta = prompt("Desea seguir ingresando? ");
+	}
+	if(bandera == 0)
+	{
+		multiplicacionNegativos = 0;
 	}
 
 

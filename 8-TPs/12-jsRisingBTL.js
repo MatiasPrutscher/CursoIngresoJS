@@ -48,14 +48,6 @@ function ComenzarIngreso ()
  		sexoIngresado = prompt("Error, reingrese su sexo: ", "“M” para masculino y “F” para femenino");
 
  	}//Fin while(sexoIngresado != "m" || sexoIngresado != "f")
- 	if(sexoIngresado =="m")
- 	{
- 		sexoIngresado = "Masculino";
- 	}
- 	else
- 	{
- 		sexoIngresado = "Femenino";
- 	}
 
 
  	//C.	Estado civil, 1-para soltero, 2-para casados, 3-para divorciados y 4-para viudos
@@ -70,24 +62,6 @@ function ComenzarIngreso ()
 
  	//Paso de caracter a entero
  	estadoCivilIngresado = parseInt(estadoCivilIngresado);
-
- 	switch(estadoCivilIngresado)
- 	{
-
- 		case 1:
- 			estadoCivilIngresado = "Soltero";
- 			break;
- 		case 2:
- 			estadoCivilIngresado = "Casado";
- 			break;
- 		case 3:
- 			estadoCivilIngresado = "Divorciado";
- 			break;
- 		default:
- 			estadoCivilIngresado = "Viudo";
- 			break;
-
- 	}//Fin switch(estadoCivilIngresado)
 
 
  	//D.	Sueldo bruto, no menor a 8000.
@@ -133,6 +107,36 @@ function ComenzarIngreso ()
  		nacionalidad = prompt("Error, reingrese su nacionalidad: ", "“A” para argentinos, “E” para extranjeros, “N” para nacionalizados.");
 
  	}//Fin while(nacionalidad != "A" && nacionalidad != "E" && nacionalidad != "N")
+ 	//Fin de validaciones
+
+ 	//Logica
+ 	//
+ 	if(sexoIngresado =="m")
+ 	{
+ 		sexoIngresado = "Masculino";
+ 	}
+ 	else
+ 	{
+ 		sexoIngresado = "Femenino";
+ 	}
+
+ 	switch(estadoCivilIngresado)
+ 	{
+
+ 		case 1:
+ 			estadoCivilIngresado = "Soltero";
+ 			break;
+ 		case 2:
+ 			estadoCivilIngresado = "Casado";
+ 			break;
+ 		case 3:
+ 			estadoCivilIngresado = "Divorciado";
+ 			break;
+ 		default:
+ 			estadoCivilIngresado = "Viudo";
+ 			break;
+
+ 	}//Fin switch(estadoCivilIngresado)
 
  	switch(nacionalidad)
  	{
@@ -146,7 +150,7 @@ function ComenzarIngreso ()
  			nacionalidad = "nacionalizado";
  			break;
  	}//Fin switch(nacionalidad)
-
+ 	//Fin de logica
 
 
  	//Muestra de datos
