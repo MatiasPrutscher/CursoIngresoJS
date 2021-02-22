@@ -29,12 +29,21 @@ function mostrar()
 	var cantidadDeBolsasTotales;
 	var sumaPrecioBruto;
 	var descuento;
+	var acumuladorDeBolsasDeCal;
+	var acumuladorDeBolsasDeCemento;
+	var acumuladorDeBolsasDeArena;
+	var precioDeCal;
+	var precioDeCemento;
+	var precioDeArena;
 
 
 	//Inicializacion
 	respuesta ="si";
 	sumaPrecioBruto = 0;
 	cantidadDeBolsasTotales = 0;
+	acumuladorDeBolsasDeArena =0;
+	acumuladorDeBolsasDeCemento = 0;
+	acumuladorDeBolsasDeCal = 0;
 
 
 	//Bucle
@@ -86,7 +95,61 @@ function mostrar()
 		sumaPrecioBruto = sumaPrecioBruto + precioBruto;
 
 		//Acumulador total de bolsas
-		cantidadDeBolsasTotales = cantidadDeBolsasTotales + cantidadDeBolsasIngresadas;
+		//cantidadDeBolsasTotales = cantidadDeBolsasTotales + cantidadDeBolsasIngresadas;
+
+		switch (productosIngresados)
+		{
+
+			case "cal":
+				if(acumuladorDeBolsasDeCal == 0)
+				{
+					acumuladorDeBolsasDeCal = cantidadDeBolsasIngresadas;
+					precioDeCal = precioBruto;
+				}
+				else
+				{
+
+					acumuladorDeBolsasDeCal = acumuladorDeBolsasDeCal + cantidadDeBolsasIngresadas;
+				 	precioDeCal = precioDeCal + precioBruto;
+
+				}
+				break;
+
+			case "cemento":
+				if(acumuladorDeBolsasDeCemento == 0)
+				{
+
+					acumuladorDeBolsasDeCemento = cantidadDeBolsasIngresadas;
+					precioDeCemento = precioBruto;
+
+				}
+				else
+				{
+
+					acumuladorDeBolsasDeCemento = acumuladorDeBolsasDeCemento + cantidadDeBolsasIngresadas;
+					precioDeCemento = precioDeCemento + precioBruto;
+
+				}
+				break;
+
+			case "arena":
+				if(acumuladorDeBolsasDeArena == 0)
+				{
+
+					acumuladorDeBolsasDeArena = cantidadDeBolsasIngresadas;
+					precioDeArena = precioBruto;
+
+				}
+				else
+				{
+
+					acumuladorDeBolsasDeArena = acumuladorDeBolsasDeArena + cantidadDeBolsasIngresadas;
+					precioDeArena = precioDeArena + precioBruto;
+
+				}
+				
+
+		}
 		
 
 		//Continuidad del while
@@ -94,7 +157,14 @@ function mostrar()
 
 	}//Fin while(respuesta == "si")
 
-	if(cantidadDeBolsasTotales < 10)
+
+	//Si compro más de 10 bolsas en total tenes 15% de descuento sobre el total a pagar.
+	//Si compro más de 30 bolsas en total tenes 25% de descuento sobre el total a pagar.
+
+
+	cantidadDeBolsasTotales = acumuladorDeBolsasDeArena + acumuladorDeBolsasDeCemento + acumuladorDeBolsasDeCal;
+
+	if(cantidadDeBolsasTotales < 11)
 	{
 
 		porcentaje = 0;
@@ -105,7 +175,7 @@ function mostrar()
 		if(cantidadDeBolsasTotales < 30)
 		{
 
-			porcentaje = 25/100;
+			porcentaje = 15/100;
 
 		}//Fin if(cantidadDeBolsasTotales < 30)
 		else
@@ -116,6 +186,63 @@ function mostrar()
 		}//Fin else if(cantidadDeBolsasTotales < 30)
 
 	}//Fin else if(cantidadDeBolsasTotales < 10)
+
+
+
+	//d) Informar el tipo con mas cantidad de bolsas.
+
+	if(acumuladorDeBolsasDeCal > acumuladorDeBolsasDeArena || acumuladorDeBolsasDeCal > acumuladorDeBolsasDeCemento)
+	{
+
+		tipoConMasCantidadDeBolsas = "Cal";
+
+	}// Fin if(acumuladorDeBolsasDeCal > acumuladorDeBolsasDeArena || acumuladorDeBolsasDeCal > acumuladorDeBolsasDeCemento)
+	else
+	{
+		if(acumuladorDeBolsasDeCemento > acumuladorDeBolsasDeArena || acumuladorDeBolsasDeCemento > acumuladorDeBolsasDeCal)
+		{
+
+			tipoConMasCantidadDeBolsas = "Cemento";
+
+		}//Fin if(acumuladorDeBolsasDeCemento > acumuladorDeBolsasDeArena || acumuladorDeBolsasDeCemento > acumuladorDeBolsasDeCal)
+		else
+		{
+
+			tipoConMasCantidadDeBolsas = "Arena";
+
+		}//Fin else if(acumuladorDeBolsasDeCemento > acumuladorDeBolsasDeArena || acumuladorDeBolsasDeCemento > acumuladorDeBolsasDeCal)
+
+	}//Fin else if(acumuladorDeBolsasDeCal > acumuladorDeBolsasDeArena || acumuladorDeBolsasDeCal > acumuladorDeBolsasDeCemento)
+
+
+
+	//f) El tipo mas caro
+
+	if(precioDeCal > precioDeArena || precioDeCal > precioDeCemento)
+	{
+
+		tipoMasCaro = "Cal";
+
+	}//Fin if(precioDeCal > precioDeArena || precioDeCal > precioDeCemento)
+	else
+	{
+
+		if(precioDeCemento > precioDeCal || precioDeCemento > precioDeArena)
+		{
+
+			tipoMasCaro = "Cemento";
+
+		}// Fin if(precioDeCemento > precioDeCal || precioDeCemento > precioDeArena)
+		else
+		{
+
+			tipoMasCaro = "Arena";
+
+		}//Fin else if(precioDeCemento > precioDeCal || precioDeCemento > precioDeArena)
+
+	}//Fin else if(precioDeCal > precioDeArena || precioDeCal > precioDeCemento)
+
+
 
 
 	//precio con descuento
