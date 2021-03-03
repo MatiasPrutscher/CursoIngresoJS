@@ -8,7 +8,197 @@ b) Cuantos mayores de edad estan viudos
 c) La cantidad de hombres que hay solteros o viudos.
 d) cuantas personas de la tercera edad( mas de 60 años) , tienen mas de 38 de temperatura
 e) El promedio de edad entre los hombres solteros.*/
+
 function mostrar()
+{
+	//Declaracion de variables
+	var nombreIngresado;
+	var edadIngresada;
+	var sexoIngresado;
+	var estadoCivilIngresado;
+	var temperaturaCorporalIngresada;
+	var contador;
+	var respuesta;
+	var mayorTemperatura;
+	var nombreDeLaPersonaConMayorTemperatura;
+	var contadorViudosMayoresDeEdad;
+	var contadorDeHombresViudos;
+	var contadorDeHombresSolteros;
+	var sumaDeEdadHombresSolteros;
+	var personasDeLaTerceraEdadConFiebre;
+	var totalSolterosYViudos;
+	var promedioDeEdadHombresSolteros;
+
+	//Inicializacion de variables
+	contadorViudosMayoresDeEdad = 0;
+	contadorDeHombresViudos = 0;
+	contadorDeHombresSolteros = 0;
+	personasDeLaTerceraEdadConFiebre = 0;
+	sumaDeEdadHombresSolteros = 0;
+
+
+
+	for(contador = 0; ; contador++)
+	{
+		//Toma y validacion de dato
+		nombreIngresado = prompt("Ingrese el nombre del pasajero: ");
+		while(isNaN(nombreIngresado) == false)
+		{
+
+			nombreIngresado = prompt("Error, reingrese el nombre del pasajero: ");
+
+		}
+
+		edadIngresada = prompt("Ingrese la edad del pasajero: ", "Mayores a 0");
+		while(isNaN(edadIngresada) == true || edadIngresada < 1)
+		{
+
+			edadIngresada = prompt("Error, reingrese la edad del pasajero: ", "Mayores a 0");
+
+		}
+		edadIngresada = parseInt(edadIngresada);
+
+		sexoIngresado = prompt("Ingrese el sexo: ", "f femenino, m masculino");
+		while(isNaN(sexoIngresado) ==  false || sexoIngresado != "f" && sexoIngresado != "m")
+		{
+
+			sexoIngresado = prompt("Error, reingrese el sexo: ", "f femenino, m masculino");
+
+		}
+
+		estadoCivilIngresado = prompt("Ingrese el estado civil: ", "soltero, casado o viudo");
+		while(isNaN(estadoCivilIngresado) == false || estadoCivilIngresado != "soltero" && estadoCivilIngresado != "casado" && estadoCivilIngresado != "viudo")
+		{
+
+			estadoCivilIngresado = prompt("Error, reingrese el estado civil: ", "soltero, casado o viudo");
+
+		}
+
+		temperaturaCorporalIngresada = prompt("Ingrese la temperatura corporal: ", "temperaturas entre 33 y 44");
+		while(isNaN(temperaturaCorporalIngresada) == true || temperaturaCorporalIngresada < 33 || temperaturaCorporalIngresada > 44)
+		{
+
+			temperaturaCorporalIngresada = prompt("Error, reingrese la temperatura corporal: ", "temperaturas entre 33 y 44");
+
+		}
+		temperaturaCorporalIngresada = parseFloat(temperaturaCorporalIngresada);
+
+		
+
+
+		//Logica
+		if(contador == 0)
+		{
+
+			mayorTemperatura = temperaturaCorporalIngresada;
+			nombreDeLaPersonaConMayorTemperatura = nombreIngresado;
+
+		}//if(contador == 0)
+		else
+		{
+
+			if(mayorTemperatura < temperaturaCorporalIngresada)
+			{
+
+				mayorTemperatura = temperaturaCorporalIngresada;
+				nombreDeLaPersonaConMayorTemperatura = nombreIngresado;
+
+			}
+
+		}//fin else if(contador == 0)
+
+		switch(estadoCivilIngresado)
+		{
+
+			case "viudo":
+				if(edadIngresada > 18)
+				{
+
+					contadorViudosMayoresDeEdad ++;
+
+				}
+				if(sexoIngresado == "m")
+				{
+
+					contadorDeHombresViudos++;
+
+				}
+
+				break;
+
+			case "soltero":
+				if(sexoIngresado == "m")
+				{
+
+					contadorDeHombresSolteros++;
+					sumaDeEdadHombresSolteros = sumaDeEdadHombresSolteros + edadIngresada;
+
+				}
+				break;
+
+		}//Fin switch(estadoCivilIngresado)
+		if(edadIngresada > 60 || temperaturaCorporalIngresada > 38)
+		{
+
+			personasDeLaTerceraEdadConFiebre++;
+			
+		}
+
+		respuesta = prompt("Desea seguir ingresando datos?", "si");
+		if(respuesta != "si")
+		{
+			break;
+		}
+
+	}//Fin for(contador = 0; ; contador++)
+
+	totalSolterosYViudos = contadorDeHombresSolteros + contadorDeHombresViudos;
+	promedioDeEdadHombresSolteros = sumaDeEdadHombresSolteros / contadorDeHombresSolteros;
+
+
+
+	document.write("La persona con mayor temperatura es: " + nombreDeLaPersonaConMayorTemperatura);
+	document.write("<br>La cantidad de mayores de edad viudos es de: " + contadorViudosMayoresDeEdad);
+	document.write("<br>La cantidad de hombres que hay solteros o viudos: " + totalSolterosYViudos);
+	document.write("<br>Personas de la tercera edad con fiebre: " + personasDeLaTerceraEdadConFiebre);
+	document.write("<br>Promedio de edad de los hombres solteros: " + promedioDeEdadHombresSolteros);
+
+
+}//Fin function mostrar()
+
+
+
+/*
+a) El nombre de la persona con mas temperatura.
+b) Cuantos mayores de edad estan viudos
+c) La cantidad de hombres que hay solteros o viudos.
+d) cuantas personas de la tercera edad( mas de 60 años) , tienen mas de 38 de temperatura
+e) El promedio de edad entre los hombres solteros.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*function mostrar()
 {	
 	//Declaracion de variables
 	var nombreIngresado;
@@ -176,9 +366,10 @@ function mostrar()
 b) Cuantos mayores de edad estan viudos
 c) La cantidad de hombres que hay solteros o viudos.
 d) cuantas personas de la tercera edad( mas de 60 años) , tienen mas de 38 de temperatura
-e) El promedio de edad entre los hombres solteros.*/
+e) El promedio de edad entre los hombres solteros.
 	document.write("La persona de mayor temperatura es: " + nombreDeLaPersonaConMayorTemperatura);
 	document.write("Cantidad de hombres solteros o viudos: " + sumaSolterosYViudos);
 
 
 }//Fin de la funcion
+*/

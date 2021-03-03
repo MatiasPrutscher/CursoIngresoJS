@@ -87,7 +87,7 @@ function mostrar()
 
 	promedioPositivo = sumaPositivos / cantidadPositivos;
 	promedioNegativo = sumaNegativos / cantidadNegativos;
-	diferenciaEntrePositivosYNegativos = sumaPositivos - sumaPositivos;
+	diferenciaEntrePositivosYNegativos = sumaPositivos - sumaNegativos;
 
 
 	document.write("La suma de negativos es: " + sumaNegativos);
